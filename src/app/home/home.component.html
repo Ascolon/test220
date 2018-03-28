@@ -1,0 +1,25 @@
+<div class="user-loader" *ngIf="loading">
+  <div class="spinner"></div>
+</div>
+<div class="failed" *ngIf="failed">
+    <div class="error-load">
+      <i class="try-loading fa fa-exclamation-triangle"></i>
+    </div>
+    <button (click)="startLoad()" class="try-loading-btn">ОБНОВИТЬ</button>
+</div>
+<div class="row">
+  <div class="col-md-6 update-header">
+    <span>ОБНОВЛЕНИЯ</span>
+  </div>
+  <div class="col-md-6 search">
+    <input placeholder="Поиск по названию" [(ngModel)]="searching">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2 movie-item" *ngFor="let movie of movies | search:searching" appHovered>
+    <div class="hidden-panel" >
+      <button (click)="redirect()" class="play fa fa-play-circle fa-5x"></button>
+    </div>
+    <img class="poster" [src]="movie.Poster">
+  </div>
+</div>

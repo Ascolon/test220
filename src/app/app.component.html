@@ -1,0 +1,53 @@
+<div class="container main-body">
+  <div class="header">
+    <div class="col-md-3 app-icon">
+      Icon
+    </div>
+    <div class="col-md-6 header-title">
+      Naruto
+    </div>
+    <div class="col-md-3 manage">
+      <button id="minimize-window" class="fa fa-window-minimize"></button>
+      <button id="restore-window" class="fa fa-window-restore"></button>
+      <button id="close-window" class="fa fa-times"></button>
+    </div>
+  </div>
+  <!--ОСНОВНОЕ МЕНЮ-->
+
+  <div class="left-side-menu">
+    <ul class="menu-list">
+      <li class="category-container">
+        <div class="category">
+          <i class="category-icon fa fa-home"></i>
+        </div>
+      </li>
+      <li class="category-container">
+        <div class="category">
+          <i class="category-icon fa fa-film"></i>
+        </div>
+        <ul class="genre-list">
+          <li *ngFor="let genre of genres">{{genre}}</li>
+        </ul>
+      </li>
+       <li class="category-container">
+        <div class="category">
+          <i class="category-icon fa fa-headphones"></i>
+        </div>
+      </li>
+       <li class="category-container">
+        <div class="category">
+          <i class="category-icon fa fa-heart"></i>
+        </div>
+      </li>
+       <li class="category-container">
+        <div class="category">
+          <i class="category-icon fa fa-cog"></i>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="router-body">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
